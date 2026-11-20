@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | E-Complaints UiTM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="admin-page">
+
+    <div class="admin-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-logo">E</div>
+
+                <div>
+                    <h2>E-COMPLAINTS</h2>
+                    <p>ADMIN PORTAL</p>
+                </div>
+            </div>
+
+            <div class="sidebar-label">ADMIN MENU</div>
+
+            <nav class="sidebar-nav">
+
+                <a href="#overview" class="nav-item active">
+                    <span>▦</span> Dashboard
+                </a>
+
+                <a href="#allComplaints" class="nav-item">
+                    <span>▤</span> All Complaints
+                </a>
+
+            </nav>
+
+            <div class="admin-sidebar-bottom">
+
+                <div class="sidebar-help">
+                    <span>✦</span>
+                    <h4>Admin Support</h4>
+                    <p>Manage and monitor student complaints.</p>
+                </div>
+
+                <a href="index.html" class="logout-btn" id="adminLogout">
+                    ↪ Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- MOBILE SIDEBAR OVERLAY -->
+        <div id="adminSidebarOverlay"></div>
+
+        <!-- MAIN CONTENT -->
+        <main class="admin-main">
+
+            <!-- TOP BAR -->
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+
+                    <!-- MOBILE HAMBURGER -->
+                    <button type="button" id="adminMenuBtn"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false">
+                        ☰
+                    </button>
+
+                    <span>Admin Portal / Dashboard</span>
+
+                </div>
+
+                <div class="admin-user">
+                    <div class="user-avatar">A</div>
+
+                    <div>
+                        <h4>Administrator</h4>
+                        <p>Admin</p>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- DASHBOARD OVERVIEW -->
+            <section class="admin-content" id="overview">
+
+                <div class="admin-welcome">
+
+                    <div>
+                        <span class="eyebrow">UITM PUNCAK PERDANA</span>
+
+                        <h1>Admin Dashboard</h1>
+
+                        <p>Monitor and manage student complaints efficiently.</p>
+                    </div>
+
+                </div>
+
+                <!-- STATISTICS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple">▤</div>
+                        <p>Total Complaints</p>
+                        <h2 id="adminTotal">0</h2>
+                        <span>All submitted complaints</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">◷</div>
+                        <p>Pending</p>
+                        <h2 id="adminPending">0</h2>
+                        <span>Awaiting review</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue">↻</div>
+                        <p>In Progress</p>
+                        <h2 id="adminProgress">0</h2>
+                        <span>Currently being handled</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">✓</div>
+                        <p>Resolved</p>
+                        <h2 id="adminResolved">0</h2>
+                        <span>Successfully completed</span>
+                    </div>
+
+                </div>
+
+                <!-- COMPLAINT STATUS PIE CHART -->
+                <div class="chart-container">
+
+                    <div class="chart-header">
+                        <div>
+                            <h3>Complaint Status Overview</h3>
+                            <p>Overview of all complaint statuses</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <canvas id="complaintStatusChart"></canvas>
+                    </div>
+
+                </div>
+
+                <!-- ALL COMPLAINTS -->
+                <div class="content-card admin-complaints" id="allComplaints">
+
+                    <div class="card-heading">
+                        <div>
+                            <h2>All Student Complaints</h2>
+                            <p>Review and update complaints submitted by students.</p>
+                        </div>
+                    </div>
+
+                    <!-- SEARCH -->
+                    <div class="admin-search">
+
+                        <input type="text"
+                            id="searchComplaint"
+                            placeholder="Search by complaint ID, student name or subject...">
+
+                    </div>
+
+                    <!-- TABLE -->
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Complaint ID</th>
+                                    <th>Student Name</th>
+                                    <th>Student ID</th>
+                                    <th>Subject</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Update Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="adminComplaintTable">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <!-- EMPTY STATE -->
+                    <div id="adminEmptyState" class="empty-state">
+
+                        <div>▤</div>
+
+                        <h3>No complaints found</h3>
+
+                        <p>Student complaints will appear here once submitted.</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                © 2026 E-Complaints Student UiTM Puncak Perdana.
+                All Rights Reserved.
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- CHART.JS LIBRARY -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- MAIN JAVASCRIPT -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

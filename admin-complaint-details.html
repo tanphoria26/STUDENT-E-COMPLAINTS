@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complaint Details | Admin Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="admin-details-page">
+
+    <div class="admin-details-container">
+
+        <!-- HEADER -->
+        <header class="admin-details-header">
+
+            <a href="admin-dashboard.html" class="back-btn">
+                ← Back to Admin Dashboard
+            </a>
+
+            <span class="eyebrow">UITM PUNCAK PERDANA</span>
+
+            <h1>Complaint Details</h1>
+
+            <p>Review the student's complaint information.</p>
+
+        </header>
+
+
+        <!-- COMPLAINT INFORMATION -->
+        <section class="admin-details-card">
+
+            <div class="admin-details-top">
+
+                <div>
+                    <span class="details-label">COMPLAINT ID</span>
+
+                    <h2 id="adminDetailId">Loading...</h2>
+                </div>
+
+                <span id="adminDetailStatus" class="status-badge">
+                    Pending
+                </span>
+
+            </div>
+
+            <hr>
+
+
+            <!-- STUDENT INFORMATION -->
+            <h3 class="admin-section-title">Student Information</h3>
+
+            <div class="admin-details-grid">
+
+                <div>
+                    <span>Student Name</span>
+                    <strong id="adminStudentName">-</strong>
+                </div>
+
+                <div>
+                    <span>Student ID</span>
+                    <strong id="adminStudentId">-</strong>
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- COMPLAINT INFORMATION -->
+            <h3 class="admin-section-title">Complaint Information</h3>
+
+            <div class="admin-details-grid">
+
+                <div>
+                    <span>Complaint Subject</span>
+                    <strong id="adminSubject">-</strong>
+                </div>
+
+                <div>
+                    <span>Category</span>
+                    <strong id="adminCategory">-</strong>
+                </div>
+
+                <div>
+                    <span>Location</span>
+                    <strong id="adminLocation">-</strong>
+                </div>
+
+                <div>
+                    <span>Incident Date</span>
+                    <strong id="adminIncidentDate">-</strong>
+                </div>
+
+                <div>
+                    <span>Submission Date</span>
+                    <strong id="adminSubmissionDate">-</strong>
+                </div>
+
+            </div>
+
+
+            <div class="admin-description">
+
+                <span>Complaint Description</span>
+
+                <p id="adminDescription">-</p>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- EVIDENCE -->
+            <h3 class="admin-section-title">Supporting Evidence</h3>
+
+            <div class="admin-evidence">
+
+                <span>📎</span>
+
+                <div>
+                    <strong id="adminEvidence">No evidence attached</strong>
+
+                    <p>Evidence file submitted by the student.</p>
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- UPDATE STATUS -->
+            <h3 class="admin-section-title">Manage Complaint Status</h3>
+
+            <p class="admin-status-description">
+                Update the complaint status based on its current progress.
+            </p>
+
+            <div class="admin-update-status">
+
+                <label for="updateStatus">Complaint Status</label>
+
+                <select id="updateStatus">
+
+                    <option value="Pending">Pending</option>
+
+                    <option value="In Progress">In Progress</option>
+
+                    <option value="Resolved">Resolved</option>
+
+                </select>
+
+            </div>
+
+
+            <div id="adminUpdateMessage" class="admin-update-message"></div>
+
+
+            <div class="admin-details-buttons">
+
+                <a href="admin-dashboard.html" class="admin-back-btn">
+                    Back
+                </a>
+
+                <button type="button" id="saveStatusBtn" class="admin-save-btn">
+                    Save Changes
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="details-footer">
+            © 2026 E-Complaints Student UiTM Puncak Perdana.
+        </footer>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

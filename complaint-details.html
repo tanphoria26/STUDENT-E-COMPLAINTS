@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complaint Details | E-Complaints UiTM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="details-page">
+
+    <div class="details-container">
+
+        <!-- HEADER -->
+        <header class="details-header">
+
+            <a href="student-dashboard.html" class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+            <h1>Complaint Details</h1>
+
+            <p>View your complaint information and current progress.</p>
+
+        </header>
+
+
+        <!-- COMPLAINT INFORMATION -->
+        <section class="details-card">
+
+            <div class="details-top">
+
+                <div>
+                    <span class="details-label">COMPLAINT ID</span>
+                    <h2 id="detailId">Loading...</h2>
+                </div>
+
+                <span id="detailStatus" class="status-badge">
+                    Pending
+                </span>
+
+            </div>
+
+            <hr>
+
+            <div class="details-grid">
+
+                <div>
+                    <span>Complaint Subject</span>
+                    <strong id="detailSubject">-</strong>
+                </div>
+
+                <div>
+                    <span>Category</span>
+                    <strong id="detailCategory">-</strong>
+                </div>
+
+                <div>
+                    <span>Location</span>
+                    <strong id="detailLocation">-</strong>
+                </div>
+
+                <div>
+                    <span>Incident Date</span>
+                    <strong id="detailIncidentDate">-</strong>
+                </div>
+
+                <div>
+                    <span>Submission Date</span>
+                    <strong id="detailDate">-</strong>
+                </div>
+
+                <div>
+                    <span>Student Name</span>
+                    <strong id="detailStudent">-</strong>
+                </div>
+
+            </div>
+
+            <div class="details-description">
+
+                <span>Complaint Description</span>
+
+                <p id="detailDescription">-</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPLAINT PROGRESS -->
+        <section class="details-card">
+
+            <h2>Complaint Progress</h2>
+
+            <p class="progress-subtitle">
+                Track the current progress of your complaint.
+            </p>
+
+            <div class="progress-timeline">
+
+                <div class="timeline-item" id="pendingStep">
+
+                    <div class="timeline-icon">1</div>
+
+                    <div>
+                        <h3>Pending</h3>
+                        <p>Your complaint has been submitted and is awaiting review.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item" id="progressStep">
+
+                    <div class="timeline-icon">2</div>
+
+                    <div>
+                        <h3>In Progress</h3>
+                        <p>The administrator is currently handling your complaint.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item" id="resolvedStep">
+
+                    <div class="timeline-icon">3</div>
+
+                    <div>
+                        <h3>Resolved</h3>
+                        <p>Your complaint has been successfully completed.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="details-footer">
+            © 2026 E-Complaints Student UiTM Puncak Perdana.
+        </footer>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

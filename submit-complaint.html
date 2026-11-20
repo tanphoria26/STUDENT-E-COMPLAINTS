@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submit Complaint | UiTM E-Complaints</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="complaint-page">
+
+    <main class="complaint-container">
+
+        <!-- PAGE HEADER -->
+
+        <div class="complaint-header">
+            <h1>Submit a Complaint</h1>
+            <p>
+                Please provide accurate information about your complaint.
+                Our administrator will review your submission.
+            </p>
+        </div>
+
+        <!-- COMPLAINT FORM CARD -->
+
+        <div class="complaint-card">
+
+            <h2 class="complaint-section-title">
+                Complaint Information
+            </h2>
+
+            <form id="complaintForm">
+
+                <div class="complaint-grid">
+
+                    <!-- CATEGORY -->
+
+                    <div class="complaint-form-group">
+                        <label for="category">Complaint Category *</label>
+
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="Facilities">Facilities</option>
+                            <option value="Accommodation">Accommodation</option>
+                            <option value="Cleanliness">Cleanliness</option>
+                            <option value="Internet / Wi-Fi">Internet / Wi-Fi</option>
+                            <option value="Safety and Security">Safety and Security</option>
+                            <option value="Academic Services">Academic Services</option>
+                            <option value="Staff Services">Staff Services</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- INCIDENT DATE -->
+
+                    <div class="complaint-form-group">
+                        <label for="incidentDate">Date of Incident *</label>
+
+                        <input
+                            type="date"
+                            id="incidentDate"
+                            required
+                        >
+                    </div>
+
+                    <!-- LOCATION -->
+
+                    <div class="complaint-form-group full-width">
+                        <label for="location">Location of Problem *</label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            placeholder="Example: Block A, Level 2, Room 205"
+                            required
+                        >
+                    </div>
+
+                    <!-- SUBJECT -->
+
+                    <div class="complaint-form-group full-width">
+                        <label for="subject">Complaint Subject *</label>
+
+                        <input
+                            type="text"
+                            id="subject"
+                            placeholder="Enter a short title for your complaint"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <!-- DESCRIPTION -->
+
+                    <div class="complaint-form-group full-width">
+                        <label for="description">Complaint Description *</label>
+
+                        <textarea
+                            id="description"
+                            placeholder="Describe your complaint in detail. Explain what happened and provide relevant information..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <!-- ATTACHMENT -->
+
+                    <div class="form-group">
+                        <label for="evidence">Supporting Evidence (Optional)</label>
+
+                        <input
+                            type="file"
+                            id="evidence"
+                            name="evidence"
+                            accept=".jpg,.jpeg,.png,.webp,.pdf,.doc,.docx,.xls,.xlsx,.txt">
+
+                        <small>
+                            Upload pictures or documents (JPG, PNG, WEBP, PDF, DOC, DOCX, XLS, XLSX, TXT).
+                            Maximum file size: 2MB.
+                        </small>
+                    </div>
+
+                <!-- BUTTONS -->
+
+                <div class="complaint-buttons">
+
+                    <a href="student-dashboard.html"
+                       class="complaint-cancel-btn">
+                        CANCEL
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="complaint-submit-btn"
+                    >
+                        SUBMIT COMPLAINT →
+                    </button>
+
+                </div>
+
+                <p
+                    id="complaintMessage"
+                    class="complaint-message"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

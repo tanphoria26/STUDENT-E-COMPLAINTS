@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | E-Complaints UiTM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- MOBILE SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <!-- SIDEBAR BRAND -->
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">E</div>
+
+            <div>
+                <h2>E-COMPLAINTS</h2>
+                <p>STUDENT PORTAL</p>
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR LABEL -->
+        <div class="sidebar-label">MAIN MENU</div>
+
+
+        <!-- NAVIGATION -->
+        <nav class="sidebar-nav">
+
+            <a href="student-dashboard.html" class="nav-item active">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a href="submit-complaint.html" class="nav-item">
+                <span>＋</span>
+                Submit Complaint
+            </a>
+
+            <a href="#complaints" class="nav-item">
+                <span>▤</span>
+                My Complaints
+            </a>
+
+            <a href="#profile" class="nav-item">
+                <span>♙</span>
+                My Profile
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-help">
+
+                <span>✦</span>
+
+                <h4>Need Help?</h4>
+
+                <p>Contact the campus administrator for assistance.</p>
+
+            </div>
+
+
+            <a href="index.html" class="logout-btn">
+                ↪ Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <!-- MOBILE MENU BUTTON -->
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="sidebar">
+                ☰
+            </button>
+
+
+            <!-- BREADCRUMB -->
+            <div class="breadcrumb">
+                <span>Student Portal</span> / Dashboard
+            </div>
+
+
+            <!-- TOPBAR RIGHT -->
+            <div class="topbar-right">
+
+                <button class="notification-btn" title="Notifications">
+                    ♧
+                </button>
+
+
+                <!-- USER PROFILE -->
+                <div class="user-profile">
+
+                    <div class="user-avatar">S</div>
+
+                    <div class="user-info">
+
+                        <h4 id="displayName">Student User</h4>
+
+                        <p>Student</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD OVERVIEW -->
+        <section class="page-section" id="overview">
+
+
+            <!-- WELCOME SECTION -->
+            <div class="welcome-section">
+
+                <div>
+
+                    <span class="eyebrow">UITM PUNCAK PERDANA</span>
+
+                    <h1>
+                        Welcome Back,
+                        <span id="welcomeName">Student</span>!
+                    </h1>
+
+                    <p>
+                        Here's an overview of your complaints and activities.
+                    </p>
+
+                </div>
+
+
+                <a href="submit-complaint.html" class="primary-btn">
+                    + New Complaint
+                </a>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+            <div class="stats-grid">
+
+
+                <!-- TOTAL COMPLAINTS -->
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">▤</div>
+
+                    <p>Total Complaints</p>
+
+                    <h2 id="totalCount">0</h2>
+
+                    <span>All submitted complaints</span>
+
+                </div>
+
+
+                <!-- PENDING -->
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">◷</div>
+
+                    <p>Pending</p>
+
+                    <h2 id="pendingCount">0</h2>
+
+                    <span>Awaiting review</span>
+
+                </div>
+
+
+                <!-- IN PROGRESS -->
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">↻</div>
+
+                    <p>In Progress</p>
+
+                    <h2 id="progressCount">0</h2>
+
+                    <span>Currently being handled</span>
+
+                </div>
+
+
+                <!-- RESOLVED -->
+                <div class="stat-card">
+
+                    <div class="stat-icon green">✓</div>
+
+                    <p>Resolved</p>
+
+                    <h2 id="resolvedCount">0</h2>
+
+                    <span>Successfully completed</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECENT COMPLAINTS -->
+            <div class="content-card" id="complaints">
+
+
+                <!-- CARD HEADING -->
+                <div class="card-heading">
+
+                    <div>
+
+                        <h2>Recent Complaints</h2>
+
+                        <p>Keep track of your submitted complaints.</p>
+
+                    </div>
+
+                    <a href="#complaints" class="view-all">
+                        View All
+                    </a>
+
+                </div>
+
+
+                <!-- COMPLAINT TABLE -->
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Complaint ID</th>
+                                <th>Subject</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="complaintTable">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- EMPTY STATE -->
+                <div id="emptyState" class="empty-state">
+
+                    <div class="empty-icon">▤</div>
+
+                    <h3>No complaints yet</h3>
+
+                    <p>Your submitted complaints will appear here.</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE -->
+            <div class="content-card profile-card" id="profile">
+
+
+                <!-- PROFILE HEADING -->
+                <div class="card-heading">
+
+                    <div>
+
+                        <h2>My Profile</h2>
+
+                        <p>Your student information.</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE INFORMATION -->
+                <div class="profile-details">
+
+
+                    <div>
+                        <span>Full Name</span>
+                        <strong id="profileName">Student User</strong>
+                    </div>
+
+
+                    <div>
+                        <span>Student ID</span>
+                        <strong id="profileId">Not provided</strong>
+                    </div>
+
+
+                    <div>
+                        <span>Campus</span>
+                        <strong>UiTM Puncak Perdana</strong>
+                    </div>
+
+
+                    <div>
+                        <span>Account Type</span>
+                        <strong>Student</strong>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+
+            © 2026 E-Complaints Student UiTM Puncak Perdana.
+            All Rights Reserved.
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
